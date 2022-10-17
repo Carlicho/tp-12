@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+
+import Movies from './components/movies/movies';
+import Contador from './components/Contador/Contador';
 import './App.css';
 
+const myData = [
+  { Framework: "Boostrap"} ,
+  { Framework: "Material"} ,
+  { Framework: "Tailwind"} ,
+  { Framework: "Next"}
+]
+
+const movieData = [
+  {thumbnail:"asdasdasd", urlVideo: "dasdasd", preview:"asdasd"},
+]
+
 function App() {
+
+  const myDataList = movieData .map( (element) => {
+        return ( <img src={element.thumbnail} alt=""/> )
+    } );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Contador></Contador>
+      <Movies data={[]}>
+      {myDataList}
+      </Movies>
     </div>
   );
 }
